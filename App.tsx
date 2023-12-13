@@ -15,7 +15,13 @@ export default function App() {
     <NavigationContainer>
       <Tab.Navigator
         initialRouteName='Home'
-        screenOptions={{ tabBarActiveTintColor: '#e91e63' }}
+        screenOptions={{
+          tabBarActiveTintColor: '#e91e63',
+          tabBarStyle: {
+            paddingBottom: 10,
+            height: 60,
+          },
+        }}
       >
         <Tab.Screen
           name='Home'
