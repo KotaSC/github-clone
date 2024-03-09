@@ -1,12 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import React from "react";
 
-import { Home } from './src/screens/home';
-import { Notification } from './src/screens/notification';
-import { Discover } from './src/screens/discover';
-import { Profile } from './src/screens/profile';
+import { screens } from "./src/Screens/utils/screens";
 
 const Tab = createBottomTabNavigator();
 
@@ -14,63 +11,34 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName='Home'
+        initialRouteName="Home"
         screenOptions={{
-          tabBarActiveTintColor: '#e91e63',
+          tabBarActiveTintColor: "#e91e63",
           tabBarStyle: {
             paddingBottom: 10,
             height: 60,
           },
         }}
       >
-        <Tab.Screen
-          name='Home'
-          component={Home}
-          options={{
-            tabBarLabel: 'Home',
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name='home' color={color} size={size} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name='Notification'
-          component={Notification}
-          options={{
-            tabBarLabel: 'Notification',
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons name='bell' color={color} size={size} />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name='Discover'
-          component={Discover}
-          options={{
-            tabBarLabel: 'Discover',
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons
-                name='compass'
-                color={color}
-                size={size}
-              />
-            ),
-          }}
-        />
-        <Tab.Screen
-          name='Profile'
-          component={Profile}
-          options={{
-            tabBarLabel: 'Profile',
-            tabBarIcon: ({ color, size }) => (
-              <MaterialCommunityIcons
-                name='account'
-                color={color}
-                size={size}
-              />
-            ),
-          }}
-        />
+        {screens.map((screen) => (
+          <Tab.Screen
+            key={screen.name}
+            name={screen.name}
+            component={screen.component}
+            options={{
+              tabBarLabel: screen.label,
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons
+                  color={color}
+                  name={
+                    screen.icon as typeof MaterialCommunityIcons.defaultProps.name
+                  }
+                  size={size}
+                />
+              ),
+            }}
+          />
+        ))}
       </Tab.Navigator>
     </NavigationContainer>
   );
