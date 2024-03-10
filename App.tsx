@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 
-import { screens } from "./src/Screens/utils/screens";
+import { screens } from "./src/screens/utils/screens";
 
 const Tab = createBottomTabNavigator();
 
