@@ -2,6 +2,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
+import { MD3Colors } from "react-native-paper";
 
 import { screens } from "./src/screens/utils/screens";
 
@@ -13,7 +14,7 @@ export default function App() {
       <Tab.Navigator
         initialRouteName="Home"
         screenOptions={{
-          tabBarActiveTintColor: "#e91e63",
+          tabBarActiveTintColor: MD3Colors.primary50,
           tabBarStyle: {
             paddingBottom: 10,
             height: 60,
