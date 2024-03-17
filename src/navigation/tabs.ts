@@ -3,7 +3,7 @@ import { Home } from "../screens/Home";
 import { Notification } from "../screens/Notification";
 import { Profile } from "../screens/Profile";
 
-export const screens = [
+export const tabs = [
   {
     name: "Home",
     component: Home,

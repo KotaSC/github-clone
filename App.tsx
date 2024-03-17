@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { MD3Colors } from "react-native-paper";
 
-import { screens } from "./src/navigation/screens";
+import { tabs } from "./src/navigation/tabs";
 
 const Tab = createBottomTabNavigator();
 
@@ -21,18 +21,18 @@ export default function App() {
           },
         }}
       >
-        {screens.map((screen) => (
+        {tabs.map((tab) => (
           <Tab.Screen
-            key={screen.name}
-            name={screen.name}
-            component={screen.component}
+            key={tab.name}
+            name={tab.name}
+            component={tab.component}
             options={{
-              tabBarLabel: screen.label,
+              tabBarLabel: tab.label,
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons
                   color={color}
                   name={
-                    screen.icon as typeof MaterialCommunityIcons.defaultProps.name
+                    tab.icon as typeof MaterialCommunityIcons.defaultProps.name
                   }
                   size={size}
                 />
