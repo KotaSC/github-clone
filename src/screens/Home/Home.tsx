@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet } from "react-native";
 import { Card, List, Text, Searchbar, MD3Colors } from "react-native-paper";
 
-import { Layout } from "../components/Layout";
+import { Layout } from "../../components/Layout";
 
 const items = [
   { title: "Issue", icon: "alpha-i-circle", color: MD3Colors.primary50 },
@@ -29,6 +29,7 @@ export const Home = () => {
           <List.Section>
             {items.map((item) => (
               <List.Item
+                key={item.title}
                 title={item.title}
                 left={() => <List.Icon color={item.color} icon={item.icon} />}
               />

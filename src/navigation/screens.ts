@@ -1,7 +1,7 @@
-import { Discover } from "../Discover";
-import { Home } from "../Home";
-import { Notification } from "../Notification";
-import { Profile } from "../Profile";
+import { Discover } from "../screens/Discover";
+import { Home } from "../screens/Home";
+import { Notification } from "../screens/Notification";
+import { Profile } from "../screens/Profile";
 
 export const screens = [
   {

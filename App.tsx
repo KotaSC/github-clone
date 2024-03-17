@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import { MD3Colors } from "react-native-paper";
 
-import { screens } from "./src/screens/utils/screens";
+import { screens } from "./src/navigation/screens";
 
 const Tab = createBottomTabNavigator();
 
