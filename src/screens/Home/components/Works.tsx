@@ -25,7 +25,7 @@ export const Works = () => {
   );
 };
 
-export const items = [
+const items = [
   { title: "Issue", icon: "alpha-i-circle", color: MD3Colors.primary50 },
   { title: "Pull Request", icon: "source-pull", color: MD3Colors.primary50 },
   {
